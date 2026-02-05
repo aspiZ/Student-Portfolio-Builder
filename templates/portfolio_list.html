@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <title>Листа на Портфолија</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Почетна</a>
+            <a href="{{ url_for('portfolio_new') }}">Креирај Портфолио</a>
+            <a href="{{ url_for('portfolio_list') }}">Листа на портфолија</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image" style="background-image: url('{{ url_for('static', filename='image.jpg') }}');">
+            <h2>Сите Студентски Портфолија</h2>
+            <p>Кликнете на името за да го погледнете деталното портфолио:</p>
+
+            <ul>
+                <li><a href="#">Марко Марковски - Софтверско инженерство</a></li>
+                <li><a href="#">Ана Аневска - Дизајн</a></li>
+                <li><a href="#">Петар Петров - Маркетинг</a></li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

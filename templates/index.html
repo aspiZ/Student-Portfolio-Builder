@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title> Student Portfolio Builder </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Почетна</a>
+            <a href="{{ url_for('portfolio_new') }}">Креирај Портфолио</a>
+            <a href="{{ url_for('portfolio_list') }}">Листа на портфолија</a>
+        </nav>
+    </header>
+
+
+<main>
+    <div class="image" style="background-image: url('{{ url_for('static', filename='image.jpg') }}');">
+        <div class="container">
+                <h1>Дигитално Студентско Портфолио</h1>
+                <p>Вашата платформа за професионално претставување. Креирајте личен профил, прикажете ги вашите проекти и споделете ги своите успеси со идните работодавачи на едно место.</p>
+                <a class="btn" href="{{ url_for('portfolio_new') }}">Направи портфолио</a>
+        </div>
+    </div>
+</main>
+
+
+</body>
+</html>
+
+

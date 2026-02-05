@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <title>Креирај Портфолио</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Почетна</a>
+            <a href="{{ url_for('portfolio_new') }}">Креирај Портфолио</a>
+            <a href="{{ url_for('portfolio_list') }}">Листа на портфолија</a>
+        </nav>
+    </header>
+
+
+    <div class="image" style="background-image: url('{{ url_for('static', filename='image.jpg') }}');">
+        <h1>Ново портфолио</h1>
+        <form action="{{ url_for('portfolio_new') }}" method="POST">
+            <div>
+                <label>Име </label><br>
+                <input type="text" name="ime" required>
+            </div>
+            <br>
+
+            <div>
+                <label>Презиме </label><br>
+                <input type="text" name="prezime" required>
+            </div>
+            <br>
+
+            <div>
+                <label>Години </label><br>
+                <input type="number" name="godini" required>
+            </div>
+            <br>
+
+            <div>
+                <label>Насока </label><br>
+                <select name="nasoka" required>
+                    <option value="1">Select...</option>
+                    <option value="2">Програмер</option>
+                    <option value="3">Девелопер</option>
+                    <option value="4">Хирург</option>
+                    <option value="5">Адвокат</option>
+                    <option value="6">Доктор</option>
+                    <option value="7">Медицинска сестра</option>
+                    <option value="8">Професор</option>
+                    <option value="9">Премиер</option>
+                </select>
+            </div>
+                <br>
+
+                <div>
+                <label>Вештини</label><br>
+                    <input type="text" name="vestini">
+                </div>
+
+            <br>
+
+                <button type="submit">Зачувај</button>
+        </form>
+    </div>
+</body>
+</html>
