@@ -277,8 +277,11 @@ main ul li a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid #eee;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    background: #fafafa;
+    border: 1px solid #dfe6e9;
+    border-radius: 8px;
 }
 
 .portfolio-link {
@@ -306,25 +309,46 @@ main ul li a:hover {
 
 .portfolio-detail {
     display: flex;
-    gap: 40px;
+    gap: 30px;
+    color: #546e7a;
 }
 
 .left-panel {
     width: 30%;
-    border-right: 1px solid #eee;
-    padding-right: 20px;
+    background: #546e7a;
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .left-panel h1 {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .right-panel {
     width: 70%;
+    background: #546e7a;
+    border: 1px solid #dfe6e9;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .right-panel h3 {
     margin-top: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
+.back-link {
+    position: absolute;
+    margin-top: -40px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #546e7a;
+    font-weight: 500;
+}
+
+.back-link a:hover {
+    text-decoration: underline;
+}
