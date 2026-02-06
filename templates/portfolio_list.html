@@ -16,14 +16,22 @@
 
     <main>
         <div class="image" style="background-image: url('{{ url_for('static', filename='image.jpg') }}');">
-            <h2>Сите Студентски Портфолија</h2>
-            <p>Кликнете на името за да го погледнете деталното портфолио:</p>
+            <div class="white-box">
+                <h2>Сите Студентски Портфолија</h2>
+                <p>Кликнете на името за да го погледнете деталното портфолио:</p>
 
-            <ul>
-                <li><a href="#">Марко Марковски - Софтверско инженерство</a></li>
-                <li><a href="#">Ана Аневска - Дизајн</a></li>
-                <li><a href="#">Петар Петров - Маркетинг</a></li>
-            </ul>
+                <ul>
+                    {% for p in portfolio %}
+                        <li class="portfolio-item">
+                            <a class="portfolio-link" href="/portfolio/view/{{ p.id }}">{{ p.ime }} {{ p.prezime }} – {{ p.nasoka }}</a>
+
+                            <form method="post" action="{{ url_for('delete_portfolio', portfolio_id=p.id) }}" onsubmit="return confirm('Дали си сигурен дека сакаш трајно да го избришеш портфолиото?');">
+                                <button class="delete-btn" type="submit">Избриши</button>
+                            </form>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </main>
 </body>

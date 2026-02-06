@@ -264,3 +264,67 @@ main ul li a:hover {
     font-style: italic;
 }
 
+.white-box {
+    background: #fff;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.portfolio-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.portfolio-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.portfolio-link:hover {
+    text-decoration: underline;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+.portfolio-detail {
+    display: flex;
+    gap: 40px;
+}
+
+.left-panel {
+    width: 30%;
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.left-panel h1 {
+    margin-bottom: 20px;
+}
+
+.right-panel {
+    width: 70%;
+}
+
+.right-panel h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+

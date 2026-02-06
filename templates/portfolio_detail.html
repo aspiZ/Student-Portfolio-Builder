@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('home') }}">Почетна</a>
+            <a href="{{ url_for('portfolio_new') }}">Креирај Портфолио</a>
+            <a href="{{ url_for('portfolio_list') }}">Листа на портфолија</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="image" style="background-image: url('{{ url_for('static', filename='image.jpg') }}');">
+            <div class="white-box portfolio-detail">
+                <div class="left-panel">
+                    <h1>{{ portfolio.ime }} {{ portfolio.prezime }}</h1>
+
+                    <p><strong>Години:</strong> {{ portfolio.godini }}</p>
+                    <p><strong>Насока:</strong> {{ portfolio.nasoka }}</p>
+                </div>
+                <div class="right-panel">
+                    <h3>Биографија</h3>
+                    <p>{{ portfolio.kratko_bio }}</p>
+                    <h3>Проекти и искуство</h3>
+                    <p>{{ portfolio.proekti_iskustva }}</p>
+                    <h3>Вештини</h3>
+                    <p>{{ portfolio.vestini }}</p>
+                </div>
+            </div>
+            <a href="{{ url_for('portfolio_list') }}">← Назад кон листата</a>
+        </div>
+    </main>
+</body>
+</html>

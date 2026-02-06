@@ -145,5 +145,20 @@ def ai_rewrite(portfolio_id):
 
     return redirect(url_for('manage', portfolio_id=portfolio.id))
 
+@app.get("/portfolio/view/<int:portfolio_id>")
+def view_portfolio(portfolio_id):
+    portfolio = session.get(Portfolio, portfolio_id)
+    return render_template("portfolio_detail.html", portfolio=portfolio)
+
+@app.post("/portfolio/delete/<int:portfolio_id>")
+def delete_portfolio(portfolio_id):
+    portfolio = session.get(Portfolio, portfolio_id)
+    if portfolio:
+        session.delete(portfolio)
+        session.commit()
+    return redirect(url_for("portfolio_list"))
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
