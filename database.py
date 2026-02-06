@@ -9,6 +9,3 @@ session = SessionLocal()
 
 Base.metadata.create_all(bind=engine)
 
-
-
-23123123123

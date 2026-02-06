@@ -14,7 +14,3 @@ class Portfolio(Base):
     nasoka = Column(String(120), nullable=False)
     vestini = Column(String(120), nullable=True)
     proekti_iskustva = Column(String(120), nullable=True)
-
-
-
-3123213214214

@@ -163,6 +163,3 @@ def delete_portfolio(portfolio_id):
 if __name__ == "__main__":
     app.run(debug=True)
 
-
-
-    4214214341321
