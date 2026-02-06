@@ -21,3 +21,6 @@ def generate_text(prompt: str) -> str:
     except Exception as e:
         return f"AI грешка: {e}"
 
+
+
+321312312312321
