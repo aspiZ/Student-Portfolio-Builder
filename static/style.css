@@ -265,7 +265,7 @@ main ul li a:hover {
 }
 
 .white-box.portfolio {
-    background: #fff;
+    background: white;
     max-width: 900px;
     margin: 60px auto;
     padding: 30px 40px;
@@ -311,13 +311,12 @@ main ul li a:hover {
     display: flex;
     gap: 40px;
     background-color: white;
-    text-colour: #546e7a;
+    text-color: #546e7a;
 }
 
 .left-panel {
     width: 30%;
-    background: #546e7a;
-    border: 1px solid #dfe6e9;
+    border: 2px solid #546e7a;
     border-radius: 10px;
     padding: 35px;
 }
@@ -328,8 +327,7 @@ main ul li a:hover {
 
 .right-panel {
     width: 70%;
-    background: #546e7a;
-    border: 1px solid #dfe6e9;
+    border: 2px solid #546e7a;
     border-radius: 10px;
     padding: 35px;
 }

@@ -17,7 +17,7 @@
         <form action="{{ url_for('portfolio_edit', portfolio_id=portfolio.id) }}" method="POST">
             <div>
                 <label>Кратко био</label><br>
-                <input type="text" name="kratko_bio">
+                <input type="text" name="kratko_bio" value="{{ portfolio.kratko_bio or '' }}">
                 <div class="section slide ai-control-panel">
                     <label for="tone-select">Избери AI стил:</label>
                         <select name="tone" id="tone-select" class="ai-select">
@@ -32,7 +32,7 @@
             <br>
             <div>
                     <label>Проекти и искуства</label><br>
-                    <input type="text" name="proekti_iskustva">
+                    <input type="text" name="proekti_iskustva" value="{{ portfolio.proekti_iskustva or '' }}">
             </div>
             <br>
             <button type="submit">Зачувај</button>
@@ -40,4 +40,3 @@
     </div>
 </body>
 </html>
-

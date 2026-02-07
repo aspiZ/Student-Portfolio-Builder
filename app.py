@@ -67,8 +67,6 @@ def manage2(portfolio_id: int):
 @app.route("/portfolio/<int:portfolio_id>/edit", methods=["GET", "POST"])
 def portfolio_edit(portfolio_id: int):
     portfolio = session.get(Portfolio, portfolio_id)
-    portfolio.kratko_bio = request.form.get("kratko_bio")
-    portfolio.proekti_iskustva = request.form.get("proekti_iskustva")
     if not portfolio:
         return "Не постои место со ова ИД", 404
 
@@ -109,9 +107,10 @@ def ai_rewrite(portfolio_id):
     if not portfolio:
         return "Портфолиото не е пронајдено", 404
 
-    current_text = portfolio.kratko_bio
+    form_text = (request.form.get("kratko_bio") or "").strip()
+    current_text = form_text or (portfolio.kratko_bio or "").strip()
 
-    if not current_text or len(current_text.strip()) < 3:
+    if not current_text or len(current_text) < 3:
         return "Грешка: Нема зачувано текст во базата за да се преправи. Прво внеси и зачувај текст.", 400
 
     tone = request.form.get('tone', 'student')
@@ -138,7 +137,7 @@ def ai_rewrite(portfolio_id):
     except Exception as e:
         return f"Настана грешка со AI: {str(e)}"
 
-    return redirect(url_for('manage', portfolio_id=portfolio.id))
+    return redirect(url_for('manage2', portfolio_id=portfolio.id))
 
 @app.get("/portfolio/view/<int:portfolio_id>")
 def view_portfolio(portfolio_id):
