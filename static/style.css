@@ -338,18 +338,22 @@ main ul li a:hover {
 }
 
 .back-link {
-    position: absolute;
-    margin-top: -40px;
+    margin-top: auto;
+    margin-bottom: 30px;
 }
 
 .back-link a {
+    display: inline-block;
+    background-color: #546e7a;
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    font-weight: 600;
     text-decoration: none;
-    color: #546e7a;
-    font-weight: 500;
 }
 
 .back-link a:hover {
-    text-decoration: underline;
+    background-color: #27ae60;
 }
 
 .white-box {
@@ -385,4 +389,15 @@ main ul li a:hover {
 .section:nth-child(3) { animation-delay: 0.4s; }
 button.slide { animation-delay: 0.55s; }
 
+.white-box,
+.white-box h1,
+.white-box h3,
+.white-box p,
+.white-box strong {
+    color: #546e7a;
+}
 
+.image {
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
