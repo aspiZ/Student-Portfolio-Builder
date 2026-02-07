@@ -353,3 +353,35 @@ main ul li a:hover {
     text-decoration: underline;
 }
 
+.white-box {
+    background: white;
+    max-width: 900px;
+    width: 90%;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.section {
+    margin-bottom: 25px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide {
+    animation: slideDown 0.8s ease forwards;
+}
+
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.25s; }
+.section:nth-child(3) { animation-delay: 0.4s; }
+button.slide { animation-delay: 0.55s; }
