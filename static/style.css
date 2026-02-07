@@ -310,7 +310,8 @@ main ul li a:hover {
 .portfolio-detail {
     display: flex;
     gap: 40px;
-    color: #546e7a;
+    background-color: white;
+    text-colour: #546e7a;
 }
 
 .left-panel {
