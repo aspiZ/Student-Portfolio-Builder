@@ -73,27 +73,22 @@ def portfolio_edit(portfolio_id: int):
         return "Не постои место со ова ИД", 404
 
     if request.method == "POST":
-        ime = (request.form.get("ime") or "").strip()
-        prezime = (request.form.get("prezime") or "").strip()
-        godini = (request.form.get("godini") or "").strip()
-        nasoka = (request.form.get("nasoka") or "").strip()
-        vestini = (request.form.get("vestini") or "").strip()
-
-        if not ime or not prezime or not godini or not nasoka or not vestini:
-            flash("Име, презиме, години, насока и вештини се задолжителни.", "error")
-            return render_template("manage.html", portfolio=None)
+        kratko_bio = (request.form.get("kratko_bio") or "").strip()
+        proekti_iskustva = (request.form.get("proekti_iskustva") or "").strip()
 
 
-        portfolio.ime = ime
-        portfolio.prezime = prezime
-        portfolio.godini = godini
-        portfolio.nasoka = nasoka
-        portfolio.vestini = vestini
+        if not kratko_bio or not proekti_iskustva:
+            flash("Кратка биографија и проекти/искуства се задолжителни.", "error")
+            return render_template("manage2.html", portfolio=None)
+
+
+        portfolio.kratko_bio = kratko_bio
+        portfolio.proekti_iskustva = proekti_iskustva
 
         session.commit()
-        return redirect(url_for("manage2", portfolio_id=portfolio.id))
+        return redirect(url_for("portfolio_list", portfolio_id=portfolio.id))
 
-    return render_template("manage.html", portfolio=portfolio)
+    return render_template("manage2.html", portfolio=portfolio)
 
 
 @app.post("/portfolio/<int:portfolio_id>/delete")
